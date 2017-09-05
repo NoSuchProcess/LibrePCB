@@ -39,7 +39,7 @@ namespace workspace {
 WSI_Base::WSI_Base(const QString& xmlTagName, DomElement* xmlElement) :
     QObject(0), mXmlElementTagName(xmlTagName)
 {
-    Q_ASSERT((!xmlElement) || (xmlElement->getName() == xmlTagName));
+    Q_ASSERT((!xmlElement) || (xmlElement->getName() == xmlTagName)); Q_UNUSED(xmlElement);
 }
 
 WSI_Base::~WSI_Base() noexcept

@@ -76,7 +76,7 @@ void Symbol::registerGraphicsItem(SymbolGraphicsItem& item) noexcept
 
 void Symbol::unregisterGraphicsItem(SymbolGraphicsItem& item) noexcept
 {
-    Q_ASSERT(mRegisteredGraphicsItem == &item);
+    Q_ASSERT(mRegisteredGraphicsItem == &item); Q_UNUSED(item);
     mRegisteredGraphicsItem = nullptr;
 }
 
@@ -88,7 +88,7 @@ void Symbol::listObjectAdded(const SymbolPinList& list, int newIndex,
                              const std::shared_ptr<SymbolPin>& ptr) noexcept
 {
     Q_UNUSED(newIndex);
-    Q_ASSERT(&list == &mPins);
+    Q_ASSERT(&list == &mPins); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->addPin(*ptr);
 }
 
@@ -96,7 +96,7 @@ void Symbol::listObjectAdded(const PolygonList& list, int newIndex,
                              const std::shared_ptr<Polygon>& ptr) noexcept
 {
     Q_UNUSED(newIndex);
-    Q_ASSERT(&list == &mPolygons);
+    Q_ASSERT(&list == &mPolygons); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->addPolygon(*ptr);
 }
 
@@ -104,7 +104,7 @@ void Symbol::listObjectAdded(const EllipseList& list, int newIndex,
                              const std::shared_ptr<Ellipse>& ptr) noexcept
 {
     Q_UNUSED(newIndex);
-    Q_ASSERT(&list == &mEllipses);
+    Q_ASSERT(&list == &mEllipses); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->addEllipse(*ptr);
 }
 
@@ -112,7 +112,7 @@ void Symbol::listObjectAdded(const TextList& list, int newIndex,
                              const std::shared_ptr<Text>& ptr) noexcept
 {
     Q_UNUSED(newIndex);
-    Q_ASSERT(&list == &mTexts);
+    Q_ASSERT(&list == &mTexts); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->addText(*ptr);
 }
 
@@ -120,7 +120,7 @@ void Symbol::listObjectRemoved(const SymbolPinList& list, int oldIndex,
                                const std::shared_ptr<SymbolPin>& ptr) noexcept
 {
     Q_UNUSED(oldIndex);
-    Q_ASSERT(&list == &mPins);
+    Q_ASSERT(&list == &mPins); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->removePin(*ptr);
 }
 
@@ -128,7 +128,7 @@ void Symbol::listObjectRemoved(const PolygonList& list, int oldIndex,
                                const std::shared_ptr<Polygon>& ptr) noexcept
 {
     Q_UNUSED(oldIndex);
-    Q_ASSERT(&list == &mPolygons);
+    Q_ASSERT(&list == &mPolygons); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->removePolygon(*ptr);
 }
 
@@ -136,7 +136,7 @@ void Symbol::listObjectRemoved(const EllipseList& list, int oldIndex,
                                const std::shared_ptr<Ellipse>& ptr) noexcept
 {
     Q_UNUSED(oldIndex);
-    Q_ASSERT(&list == &mEllipses);
+    Q_ASSERT(&list == &mEllipses); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->removeEllipse(*ptr);
 }
 
@@ -144,7 +144,7 @@ void Symbol::listObjectRemoved(const TextList& list, int oldIndex,
                                const std::shared_ptr<Text>& ptr) noexcept
 {
     Q_UNUSED(oldIndex);
-    Q_ASSERT(&list == &mTexts);
+    Q_ASSERT(&list == &mTexts); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->removeText(*ptr);
 }
 

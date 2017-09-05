@@ -111,7 +111,7 @@ void SymbolPin::registerGraphicsItem(SymbolPinGraphicsItem& item) noexcept
 
 void SymbolPin::unregisterGraphicsItem(SymbolPinGraphicsItem& item) noexcept
 {
-    Q_ASSERT(mRegisteredGraphicsItem == &item);
+    Q_ASSERT(mRegisteredGraphicsItem == &item); Q_UNUSED(item);
     mRegisteredGraphicsItem = nullptr;
 }
 

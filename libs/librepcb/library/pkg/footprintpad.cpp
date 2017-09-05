@@ -248,7 +248,7 @@ void FootprintPad::registerGraphicsItem(FootprintPadGraphicsItem& item) noexcept
 
 void FootprintPad::unregisterGraphicsItem(FootprintPadGraphicsItem& item) noexcept
 {
-    Q_ASSERT(mRegisteredGraphicsItem == &item);
+    Q_ASSERT(mRegisteredGraphicsItem == &item); Q_UNUSED(item);
     mRegisteredGraphicsItem = nullptr;
 }
 

@@ -433,6 +433,7 @@ Polygon* Polygon::createCenteredRect(const QString& layerName, const Length& lin
     return p;
 }
 
+
 /*****************************************************************************************
  *  Private Methods
  ****************************************************************************************/
@@ -440,7 +441,7 @@ Polygon* Polygon::createCenteredRect(const QString& layerName, const Length& lin
 void Polygon::listObjectAdded(const PolygonSegmentList& list, int newIndex,
                               const std::shared_ptr<PolygonSegment>& ptr) noexcept
 {
-    Q_ASSERT(&list == &mSegments);
+    Q_ASSERT(&list == &mSegments); Q_UNUSED(list);
     ptr->registerObserver(*this);
     mPainterPathPx = QPainterPath(); // invalidate painter path
     foreach (IF_PolygonObserver* object, mObservers) {
@@ -451,7 +452,7 @@ void Polygon::listObjectAdded(const PolygonSegmentList& list, int newIndex,
 void Polygon::listObjectRemoved(const PolygonSegmentList& list, int oldIndex,
                                 const std::shared_ptr<PolygonSegment>& ptr) noexcept
 {
-    Q_ASSERT(&list == &mSegments);
+    Q_ASSERT(&list == &mSegments); Q_UNUSED(list);
     ptr->unregisterObserver(*this);
     mPainterPathPx = QPainterPath(); // invalidate painter path
     foreach (IF_PolygonObserver* object, mObservers) {

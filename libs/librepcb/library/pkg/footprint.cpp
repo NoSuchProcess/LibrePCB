@@ -87,7 +87,7 @@ void Footprint::registerGraphicsItem(FootprintGraphicsItem& item) noexcept
 
 void Footprint::unregisterGraphicsItem(FootprintGraphicsItem& item) noexcept
 {
-    Q_ASSERT(mRegisteredGraphicsItem == &item);
+    Q_ASSERT(mRegisteredGraphicsItem == &item); Q_UNUSED(item);
     mRegisteredGraphicsItem = nullptr;
 }
 
@@ -141,7 +141,7 @@ void Footprint::listObjectAdded(const FootprintPadList& list, int newIndex,
                                 const std::shared_ptr<FootprintPad>& ptr) noexcept
 {
     Q_UNUSED(newIndex);
-    Q_ASSERT(&list == &mPads);
+    Q_ASSERT(&list == &mPads); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->addPad(*ptr);
 }
 
@@ -149,7 +149,7 @@ void Footprint::listObjectAdded(const PolygonList& list, int newIndex,
                                 const std::shared_ptr<Polygon>& ptr) noexcept
 {
     Q_UNUSED(newIndex);
-    Q_ASSERT(&list == &mPolygons);
+    Q_ASSERT(&list == &mPolygons); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->addPolygon(*ptr);
 }
 
@@ -157,7 +157,7 @@ void Footprint::listObjectAdded(const EllipseList& list, int newIndex,
                                 const std::shared_ptr<Ellipse>& ptr) noexcept
 {
     Q_UNUSED(newIndex);
-    Q_ASSERT(&list == &mEllipses);
+    Q_ASSERT(&list == &mEllipses); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->addEllipse(*ptr);
 }
 
@@ -165,7 +165,7 @@ void Footprint::listObjectAdded(const TextList& list, int newIndex,
                                 const std::shared_ptr<Text>& ptr) noexcept
 {
     Q_UNUSED(newIndex);
-    Q_ASSERT(&list == &mTexts);
+    Q_ASSERT(&list == &mTexts); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->addText(*ptr);
 }
 
@@ -173,7 +173,7 @@ void Footprint::listObjectAdded(const HoleList& list, int newIndex,
                                 const std::shared_ptr<Hole>& ptr) noexcept
 {
     Q_UNUSED(newIndex);
-    Q_ASSERT(&list == &mHoles);
+    Q_ASSERT(&list == &mHoles); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->addHole(*ptr);
 }
 
@@ -181,7 +181,7 @@ void Footprint::listObjectRemoved(const FootprintPadList& list, int oldIndex,
                                   const std::shared_ptr<FootprintPad>& ptr) noexcept
 {
     Q_UNUSED(oldIndex);
-    Q_ASSERT(&list == &mPads);
+    Q_ASSERT(&list == &mPads); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->removePad(*ptr);
 }
 
@@ -189,7 +189,7 @@ void Footprint::listObjectRemoved(const PolygonList& list, int oldIndex,
                                   const std::shared_ptr<Polygon>& ptr) noexcept
 {
     Q_UNUSED(oldIndex);
-    Q_ASSERT(&list == &mPolygons);
+    Q_ASSERT(&list == &mPolygons); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->removePolygon(*ptr);
 }
 
@@ -197,7 +197,7 @@ void Footprint::listObjectRemoved(const EllipseList& list, int oldIndex,
                                   const std::shared_ptr<Ellipse>& ptr) noexcept
 {
     Q_UNUSED(oldIndex);
-    Q_ASSERT(&list == &mEllipses);
+    Q_ASSERT(&list == &mEllipses); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->removeEllipse(*ptr);
 }
 
@@ -205,7 +205,7 @@ void Footprint::listObjectRemoved(const TextList& list, int oldIndex,
                                   const std::shared_ptr<Text>& ptr) noexcept
 {
     Q_UNUSED(oldIndex);
-    Q_ASSERT(&list == &mTexts);
+    Q_ASSERT(&list == &mTexts); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->removeText(*ptr);
 }
 
@@ -213,7 +213,7 @@ void Footprint::listObjectRemoved(const HoleList& list, int oldIndex,
                                   const std::shared_ptr<Hole>& ptr) noexcept
 {
     Q_UNUSED(oldIndex);
-    Q_ASSERT(&list == &mHoles);
+    Q_ASSERT(&list == &mHoles); Q_UNUSED(list);
     if (mRegisteredGraphicsItem) mRegisteredGraphicsItem->removeHole(*ptr);
 }
 
