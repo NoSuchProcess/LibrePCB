@@ -4,6 +4,7 @@ SUBDIRS = \
     hoedown \
     googletest \
     librepcb \
-    quazip
+    quazip \
+    sexpresso
 
-librepcb.depends = hoedown quazip
+librepcb.depends = hoedown quazip sexpresso

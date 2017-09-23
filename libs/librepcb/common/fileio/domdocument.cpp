@@ -100,7 +100,9 @@ QByteArray DomDocument::toByteArray() const
     //writer.writeEndDocument();
     //if (writer.hasError()) throw LogicError(__FILE__, __LINE__);
     //return data;
-    return mRootElement->toSExpressions(0).toUtf8();
+    sexpresso::Sexp sexp;
+    sexp.addChild(mRootElement->toSExpressions());
+    return QByteArray::fromStdString(sexp.toString());
 }
 
 /*****************************************************************************************

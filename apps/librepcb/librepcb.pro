@@ -48,7 +48,7 @@ LIBS += \
     -llibrepcbproject \
     -llibrepcblibrary \
     -llibrepcbcommon \
-    -lquazip -lz
+    -lquazip -lz -lsexpresso
 
 INCLUDEPATH += \
     ../../libs/quazip \

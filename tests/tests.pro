@@ -28,7 +28,7 @@ LIBS += \
     -llibrepcbproject \
     -llibrepcblibrary \    # Note: The order of the libraries is very important for the linker!
     -llibrepcbcommon \     # Another order could end up in "undefined reference" errors!
-    -lquazip -lz
+    -lquazip -lz -lsexpresso
 
 INCLUDEPATH += \
     ../libs/googletest/googletest/include \

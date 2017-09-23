@@ -26,6 +26,7 @@
 #include <QtCore>
 #include <QtWidgets>
 #include <QDomElement>
+#include <sexpresso/sexpresso/sexpresso.hpp>
 #include "../exceptions.h"
 #include "filepath.h"
 
@@ -448,7 +449,7 @@ class DomElement final
 
         // Conversion Methods
 
-        QString toSExpressions(int indent) const noexcept;
+        sexpresso::Sexp toSExpressions() const noexcept;
 
         /**
          * @brief Serialize this DomElement into a QXmlStreamWriter (recursively)

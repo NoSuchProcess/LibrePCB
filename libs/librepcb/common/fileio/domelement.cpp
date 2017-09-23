@@ -281,9 +281,9 @@ QString escapeSExpression(const QString& s)
     else    return "\"" + s + "\"";
 }
 
-QString DomElement::toSExpressions(int indent) const noexcept
+sexpresso::Sexp DomElement::toSExpressions() const noexcept
 {
-    QString sexpr;
+    /*QString sexpr;
     sexpr += QString(" ").repeated(indent) + "(" + mName;
     foreach (const QString key, mAttributes.keys()) {
         sexpr += " (" + key + " " + escapeSExpression(mAttributes[key]) + ")";
@@ -300,7 +300,17 @@ QString DomElement::toSExpressions(int indent) const noexcept
         sexpr += " (value " + escapeSExpression(mText) + ")";
     }
     sexpr += ")\n";
-    return sexpr;
+    return sexpr;*/
+
+    sexpresso::Sexp sexp(mName.toStdString());
+    foreach (const QString key, mAttributes.keys()) {
+        sexp.addChild(mAttributes[key].toStdString());
+    }
+    foreach (DomElement* child, mChilds) {
+        sexp.addChild(child->toSExpressions());
+    }
+    sexp.addChild(mText.toStdString());
+    return sexp;
 }
 
 void DomElement::writeToQXmlStreamWriter(QXmlStreamWriter& writer) const noexcept
