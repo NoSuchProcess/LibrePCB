@@ -461,7 +461,8 @@ class Project final : public QObject, public IF_AttributeProvider, public Serial
 
 
         // Operator Overloadings
-        Project& operator=(const Project& rhs) = delete;
+        bool operator==(const Project& rhs) noexcept {return (this == &rhs);}
+        bool operator!=(const Project& rhs) noexcept {return (this != &rhs);}
 
 
         // Static Methods
