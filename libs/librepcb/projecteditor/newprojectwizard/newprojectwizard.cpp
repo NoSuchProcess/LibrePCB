@@ -78,8 +78,8 @@ Project* NewProjectWizard::createProject() const
     // create project and set some metadata
     FilePath projectFilePath = mPageMetadata->getFullFilePath();
     QScopedPointer<Project> project(Project::create(projectFilePath));
-    project->setName(mPageMetadata->getProjectName());
-    project->setAuthor(mPageMetadata->getProjectAuthor());
+    //project->setName(mPageMetadata->getProjectName());
+    //project->setAuthor(mPageMetadata->getProjectAuthor());
 
     // set project settings (copy from workspace settings)
     ProjectSettings& settings = project->getSettings();

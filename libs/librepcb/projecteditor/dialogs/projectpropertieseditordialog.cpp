@@ -46,12 +46,12 @@ ProjectPropertiesEditorDialog::ProjectPropertiesEditorDialog(Project& project,
 {
     mUi->setupUi(this);
 
-    mUi->edtName->setText(mProject.getName());
-    mUi->edtAuthor->setText(mProject.getAuthor());
-    mUi->edtVersion->setText(mProject.getVersion());
-    mUi->lblCreatedDateTime->setText(mProject.getCreated().toString(Qt::DefaultLocaleLongDate));
-    mUi->lblLastModifiedDateTime->setText(mProject.getLastModified().toString(Qt::DefaultLocaleLongDate));
-    mUi->attributeListEditorWidget->setAttributeList(mProject.getAttributes());
+    //mUi->edtName->setText(mProject.getName());
+    //mUi->edtAuthor->setText(mProject.getAuthor());
+    //mUi->edtVersion->setText(mProject.getVersion());
+    //mUi->lblCreatedDateTime->setText(mProject.getCreated().toString(Qt::DefaultLocaleLongDate));
+    //mUi->lblLastModifiedDateTime->setText(mProject.getLastModified().toString(Qt::DefaultLocaleLongDate));
+    //mUi->attributeListEditorWidget->setAttributeList(mProject.getAttributes());
 }
 
 ProjectPropertiesEditorDialog::~ProjectPropertiesEditorDialog() noexcept

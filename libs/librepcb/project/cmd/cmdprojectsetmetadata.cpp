@@ -36,11 +36,11 @@ namespace project {
 
 CmdProjectSetMetadata::CmdProjectSetMetadata(Project& project) noexcept :
     UndoCommand(tr("Edit Project Metadata")),
-    mProject(project),
-    mOldName(mProject.getName()),               mNewName(mProject.getName()),
-    mOldAuthor(mProject.getAuthor()),           mNewAuthor(mProject.getAuthor()),
-    mOldVersion(mProject.getVersion()),         mNewVersion(mProject.getVersion()),
-    mOldAttributes(mProject.getAttributes()),   mNewAttributes(mOldAttributes)
+    mProject(project)//,
+    //mOldName(mProject.getName()),               mNewName(mProject.getName()),
+    //mOldAuthor(mProject.getAuthor()),           mNewAuthor(mProject.getAuthor()),
+    //mOldVersion(mProject.getVersion()),         mNewVersion(mProject.getVersion()),
+    //mOldAttributes(mProject.getAttributes()),   mNewAttributes(mOldAttributes)
 {
 }
 
@@ -93,18 +93,18 @@ bool CmdProjectSetMetadata::performExecute()
 
 void CmdProjectSetMetadata::performUndo()
 {
-    mProject.setName(mOldName);
-    mProject.setAuthor(mOldAuthor);
-    mProject.setVersion(mOldVersion);
-    mProject.setAttributes(mOldAttributes);
+    //mProject.setName(mOldName);
+    //mProject.setAuthor(mOldAuthor);
+    //mProject.setVersion(mOldVersion);
+    //mProject.setAttributes(mOldAttributes);
 }
 
 void CmdProjectSetMetadata::performRedo()
 {
-    mProject.setName(mNewName);
-    mProject.setAuthor(mNewAuthor);
-    mProject.setVersion(mNewVersion);
-    mProject.setAttributes(mNewAttributes);
+    //mProject.setName(mNewName);
+    //mProject.setAuthor(mNewAuthor);
+    //mProject.setVersion(mNewVersion);
+    //mProject.setAttributes(mNewAttributes);
 }
 
 /*****************************************************************************************

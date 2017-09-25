@@ -660,12 +660,12 @@ bool Schematic::getAttributeValue(const QString& attrNS, const QString& attrKey,
     {
         if (attrKey == QLatin1String("NAME"))
             return value = mName, true;
-        else if (attrKey == QLatin1String("AUTHOR"))
-            return value = mProject.getAuthor(), true;
-        else if (attrKey == QLatin1String("CREATED"))
-            return value = mProject.getCreated().toString(Qt::SystemLocaleShortDate), true;
-        else if (attrKey == QLatin1String("LAST_MODIFIED"))
-            return value = mProject.getLastModified().toString(Qt::SystemLocaleShortDate), true;
+        //else if (attrKey == QLatin1String("AUTHOR"))
+        //    return value = mProject.getAuthor(), true;
+        //else if (attrKey == QLatin1String("CREATED"))
+        //    return value = mProject.getCreated().toString(Qt::SystemLocaleShortDate), true;
+        //else if (attrKey == QLatin1String("LAST_MODIFIED"))
+        //    return value = mProject.getLastModified().toString(Qt::SystemLocaleShortDate), true;
         else if (attrKey == QLatin1String("NBR"))
             return value = QString::number(mProject.getSchematicIndex(*this) + 1), true;
         else if (attrKey == QLatin1String("CNT"))
